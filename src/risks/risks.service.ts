@@ -14,7 +14,7 @@ export class RisksService {
 
   
   create(createRiskDto: CreateRiskDto) {
-    return 'This action adds a new risk';
+    return this.risksRepository.save(createRiskDto);
   }
 
   findAll():Promise<Risk[]> {
@@ -26,10 +26,10 @@ export class RisksService {
   }
 
   update(id: number, updateRiskDto: UpdateRiskDto) {
-    return `This action updates a #${id} risk`;
+    return this.risksRepository.update(id,updateRiskDto);
   }
 
   remove(id: number) {
-    return `This action removes a #${id} risk`;
+    return this.risksRepository.delete(id);
   }
 }
