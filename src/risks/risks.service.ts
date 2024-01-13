@@ -9,14 +9,16 @@ import { Risk } from './entities/risk.entity';
 export class RisksService {
   constructor(
     @InjectRepository(Risk)
-    private usersRepository: Repository<Risk>,
+    private risksRepository: Repository<Risk>,
   ) {}
+
+  
   create(createRiskDto: CreateRiskDto) {
     return 'This action adds a new risk';
   }
 
-  findAll() {
-    return `This action returns all risks`;
+  findAll():Promise<Risk[]> {
+    return this.risksRepository.find();
   }
 
   findOne(id: number) {
