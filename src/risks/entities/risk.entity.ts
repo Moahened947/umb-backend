@@ -83,32 +83,140 @@ export class Risk {
     @Column()
     rateOfLYDVsUSD: number;
 
+    //========= PolicyCurrency ========//
+
     @Column()
     TSIPolicyCurrency: number;
 
     @Column()
     premiumPolicyCurrency: number;
 
-    @Column({default: false})
-    isAmountPolicyCurrency: boolean;
+    @Column()
+    TSIAcceptancePolicyCurrency: number;
 
     @Column()
-    ratePolicyCurrency: number;
-
-    @Column()
-    TSIPolicyCurrencyAcceptance: number;
-
-    @Column()
-    premiumPolicyCurrencyAcceptance: number;
+    premiumAcceptancePolicyCurrency: number;
 
     @Column({default: false})
     isAmountPolicyAcceptance: boolean;
 
     @Column()
-    ourShare: number;
+    brokerAmountPolicyCurrency: number;
 
     @Column()
+    facUmbrellaPolicyCurrency: number;
+
+    @Column()
+    umbrellaPremium50PolicyCurrency: number;
+    
+    @Column()
+    retroPremium50PolicyCurrency:number;
+
+    @Column()
+    umbrellaCommisionPolicyCurrency: number;
+
+    @Column()
+    specialRetentionPolicyCurrency: number;
+
+
+    //========= USD Currency ========//
+
+    @Column()
+    TSIUSD: number;
+
+    @Column()
+    premiumUSD: number;
+
+    @Column()
+    TSIAcceptanceUSD: number;
+
+    @Column()
+    premiumAcceptanceUSD: number;
+
+
+    @Column()
+    brokerAmountUSD: number;
+
+    @Column()
+    facUmbrellaUSD: number;
+
+    @Column()
+    umbrellaPremium50USD: number;
+    
+    @Column()
+    retroPremium50USD:number;
+
+    @Column()
+    umbrellaCommisionUSD: number;
+
+    @Column()
+    specialRetentionUSD: number;
+
+    //========= LYD Currency ========//
+
+    @Column()
+    TSILYD: number;
+
+    @Column()
+    premiumLYD: number;
+
+    @Column()
+    TSIAcceptanceLYD: number;
+
+    @Column()
+    premiumAcceptanceLYD: number;
+
+    @Column()
+    brokerAmountLYD: number;
+
+    @Column()
+    facUmbrellaLYD: number;
+
+    @Column()
+    umbrellaPremium50LYD: number;
+    
+    @Column()
+    retroPremium50LYD:number;
+
+    @Column()
+    umbrellaCommisionLYD: number;
+
+    @Column()
+    specialRetentionLYD: number;
+
+    // ================ //
+
+    @Column({default: false})
+    isAmountPolicyCurrency: boolean;
+
+    @Column()
+    rateOfPolicy: number;
+
+    @Column()
+    ourShare: number;
+    
+    @Column()
     brokerCommission: number;
+    
+    @Column({default:false})
+    isFac: boolean;
+
+    @Column({default:false})
+    isApprove: boolean;
+
+    @Column()
+    issuedDate: Date;
+
+    @Column()
+    umbrellaReference: string;
+
+    @Column()
+    companyReference: string;
+
+    @Column()
+    employeeName: string;
+
+
 
 
 
