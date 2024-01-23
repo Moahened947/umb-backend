@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn,BeforeInsert } from 'typeorm';
 @Entity()
 export class Risk {
     @PrimaryGeneratedColumn()
@@ -26,23 +26,43 @@ export class Risk {
     @Column()
     limitOfTreaty: string;
 
-    @Column()
+    @Column({ nullable: true })
     dateFrom: Date;
+  
+    @BeforeInsert()
+    setDateFromDefault() {
+      if (!this.dateFrom) {
+        this.dateFrom = new Date();
+      }
+    }
 
     @Column({ default: false })
     isDateFromOpen: boolean;
 
     @Column()
+    TBAFrom: string;
+
+    @Column({ nullable: true })
     dateTo: Date;
+  
+    @BeforeInsert()
+    setDateToDefault() {
+      if (!this.dateTo) {
+        this.dateTo = new Date();
+      }
+    }
 
     @Column({ default: false })
     isDateToOpen: boolean;
 
     @Column()
-    pml: string;
+    TBATo: string;
 
     @Column()
-    ppw: string;
+    pml: number;
+
+    @Column()
+    ppw: number;
 
     @Column()
     confirmation: string;
@@ -59,8 +79,8 @@ export class Risk {
     @Column()
     classOfBusiness: string;
 
-    @Column()
-    sumInsuredName: string;
+    @Column('simple-array', { nullable: true })
+    sumInsuredName: string[];
 
     @Column()
     sumInsuredNumber: number;
@@ -74,8 +94,8 @@ export class Risk {
     @Column('simple-array', { nullable: true })
     Exclusion: string[];
 
-    @Column()
-    dateOfCurrency: Date;
+    @Column({ default:"" })
+    dateOfCurrency: string;
 
     @Column()
     rateOfPolicyCurrencyVsUSD: number;
@@ -216,11 +236,8 @@ export class Risk {
     @Column()
     employeeName: string;
 
-
-
-
-
-
+    @Column({default:false})
+    isSigntured: boolean
 
 
 }

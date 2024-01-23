@@ -19,13 +19,17 @@ export class CreateRiskDto {
 
   isDateFromOpen: boolean;
 
+  TBAFrom: string;
+
   dateTo: Date;
 
   isDateToOpen: boolean;
 
-  pml: string;
+  TBATo: string;
 
-  ppw: string;
+  pml: number;
+
+  ppw: number;
 
   confirmation: string;
 
@@ -37,7 +41,7 @@ export class CreateRiskDto {
 
   classOfBusiness: string;
 
-  sumInsuredName: string;
+  sumInsuredName: string[];
 
   sumInsuredNumber: number;
 
@@ -47,7 +51,7 @@ export class CreateRiskDto {
 
   Exclusion: string[];
 
-  dateOfCurrency: Date;
+  dateOfCurrency: string;
 
   rateOfPolicyCurrencyVsUSD: number;
 
@@ -142,4 +146,6 @@ export class CreateRiskDto {
   companyReference: string;
 
   employeeName: string;
+
+  isSigntured: boolean;
 }
